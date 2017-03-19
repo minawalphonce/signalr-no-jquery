@@ -98,6 +98,6 @@ module.exports = jQueryDeferred.extend(jqueryFunction, jQueryDeferred, {
     return [].slice.call(arr, 0);
   },
   support: {
-    cors: false
+    cors: true
   }
 });

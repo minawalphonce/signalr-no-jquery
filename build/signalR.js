@@ -1270,8 +1270,8 @@ var jQueryShim = require('./jQueryShim');
         // BUG #2953: The url needs to be same otherwise it will cause a memory leak
         getUrl: function getUrl(connection, transport, reconnecting, poll, ajaxPost) {
             /// <summary>Gets the url for making a GET based connect request</summary>
-            var baseUrl = transport === "webSockets" ? "" : connection.baseUrl,
-                url = baseUrl + connection.url,
+            var baseUrl = transport === "webSockets" ? "" : connection.baseUrl, 
+                url = baseUrl + connection.appRelativeUrl, // here we go 
                 qs = "transport=" + transport;
 
             if (!ajaxPost && connection.groupsToken) {
